@@ -11,7 +11,7 @@ const calculateTotalRevenue = async () => {
     {
       $group: {
         _id: null,
-        totalRevenue: { $sum:  '$totalPrice' },
+        totalRevenue: { $sum: '$totalPrice' },
       },
     },
     {
@@ -22,10 +22,10 @@ const calculateTotalRevenue = async () => {
     },
   ]);
   console.log(result[0]);
-  return result[0] || {totalRevenue: 0}
+  return result[0] || { totalRevenue: 0 };
 };
 
 export const orderService = {
   createOrder,
-  calculateTotalRevenue
+  calculateTotalRevenue,
 };

@@ -30,7 +30,7 @@ const updateProduct = async (id: string, data: Partial<IProduct>) => {
   if (data.price !== undefined && data.price < 0) {
     throw new Error('Price must be a positive number');
   }
-  if(data.quantity !==undefined && data.quantity <0){
+  if (data.quantity !== undefined && data.quantity < 0) {
     throw new Error('quantity must be a positive number');
   }
   const result = await Product.findByIdAndUpdate(id, data, {

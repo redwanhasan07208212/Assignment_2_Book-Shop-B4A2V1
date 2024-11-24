@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { createControllerProduct } from './product.controller';
 
-
 const router = Router();
 router.post('/', createControllerProduct.createProduct);
 router.get('/', createControllerProduct.getAllProduct);
