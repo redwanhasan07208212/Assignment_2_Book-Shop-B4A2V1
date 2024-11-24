@@ -1,4 +1,9 @@
-export type ProductCategory = 'Fiction' | 'Science' | 'SelfDevelopment' | 'Poetry' | 'Religious';
+export type ProductCategory =
+  | 'Fiction'
+  | 'Science'
+  | 'SelfDevelopment'
+  | 'Poetry'
+  | 'Religious';
 
 export interface IProduct {
   title: string;

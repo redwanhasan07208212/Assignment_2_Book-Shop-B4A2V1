@@ -1,14 +1,12 @@
 import { Router } from 'express';
-import validateRequest from '../../middlewares/validateRequest';
 import { createControllerProduct } from './product.controller';
-import CreateProductValidation from './product.zod.validate';
 
 
-const route = Router();
-route.post(
-  '/products',
-  validateRequest(CreateProductValidation),
-  createControllerProduct.createProduct,
-);
+const router = Router();
+router.post('/', createControllerProduct.createProduct);
+router.get('/', createControllerProduct.getAllProduct);
+router.get('/:productId', createControllerProduct.specificProduct);
+router.put('/:productId', createControllerProduct.updateProduct);
+router.delete('/:productId', createControllerProduct.DeleteProduct);
 
-export default route;
+export const ProductsRoutes = router;
